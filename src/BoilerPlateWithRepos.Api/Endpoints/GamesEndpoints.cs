@@ -1,15 +1,17 @@
-﻿namespace BoilerPlateWithRepos.Api.Endpoints
+﻿using BoilerPlateWithRepos.Api.Data.Repositories.Interfaces;
+using BoilerPlateWithRepos.Api.Entities;
+
+namespace BoilerPlateWithRepos.Api.Endpoints;
+public static class GamesEndpoints
 {
-    public static class GamesEndpoints
+    public static void Map(WebApplication app)
     {
-        public static void Map(WebApplication app)
+        app.MapGet("api/games", async (IGamesRepository<Game> repository) =>
         {
-            app.MapGet("api/games", () =>
-            {
-                return new string[] { "Elden Ring", "StarCraft" };
-            })
-            .WithName("Get Games")
-            .WithOpenApi();
-        }
+            var games = await repository.FindAsync();
+            return Results.Ok(games);
+        })
+        .WithName("Get Games")
+        .WithOpenApi();
     }
 }

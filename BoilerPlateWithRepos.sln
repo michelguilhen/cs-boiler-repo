@@ -5,23 +5,35 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02E14BED-11B0-49F6-AB8A-31FA9303ECED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoilerPlateWithRepos.Api", "src\BoilerPlateWithRepos.Api\BoilerPlateWithRepos.Api.csproj", "{60425749-F0C0-4D25-A535-3513B493EBAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoilerPlateWithRepos.Api", "src\BoilerPlateWithRepos.Api\BoilerPlateWithRepos.Api.csproj", "{60425749-F0C0-4D25-A535-3513B493EBAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{457FEFE6-D345-4F2D-A208-8D283C198F2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoilerPlateWithRepos.Api.IntegrationTests", "tests\BoilerPlateWithRepos.Api.IntegrationTests\BoilerPlateWithRepos.Api.IntegrationTests.csproj", "{4BABB0B1-A5DF-4575-B54A-69F320DCAF2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{60425749-F0C0-4D25-A535-3513B493EBAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{60425749-F0C0-4D25-A535-3513B493EBAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60425749-F0C0-4D25-A535-3513B493EBAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60425749-F0C0-4D25-A535-3513B493EBAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BABB0B1-A5DF-4575-B54A-69F320DCAF2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BABB0B1-A5DF-4575-B54A-69F320DCAF2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BABB0B1-A5DF-4575-B54A-69F320DCAF2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BABB0B1-A5DF-4575-B54A-69F320DCAF2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{60425749-F0C0-4D25-A535-3513B493EBAC} = {02E14BED-11B0-49F6-AB8A-31FA9303ECED}
+		{4BABB0B1-A5DF-4575-B54A-69F320DCAF2C} = {457FEFE6-D345-4F2D-A208-8D283C198F2E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62F862E9-B8CB-441A-9894-4018D912C5EC}
 	EndGlobalSection
 EndGlobal

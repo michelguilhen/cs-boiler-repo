@@ -1,0 +1,2 @@
+# get games
+GET https://localhost:7277/api/games

@@ -3,6 +3,7 @@ using System;
 using BoilerPlateWithRepos.Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BoilerPlateWithRepos.Api.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231008192354_Create.tb_publisher")]
+    partial class Createtb_publisher
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,6 +80,20 @@ namespace BoilerPlateWithRepos.Api.Data.Migrations
                     b.HasIndex("Name");
 
                     b.ToTable("tb_publisher", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("8ee47290-f1a6-4bbd-8cba-3b4060c5fd89"),
+                            Description = "It sucks",
+                            Name = "Activision"
+                        },
+                        new
+                        {
+                            Id = new Guid("cbdb5950-1c6c-4b24-a60f-d2a0960487d2"),
+                            Description = "Average",
+                            Name = "Bandai Namco"
+                        });
                 });
 
             modelBuilder.Entity("BoilerPlateWithRepos.Api.Models.Game", b =>

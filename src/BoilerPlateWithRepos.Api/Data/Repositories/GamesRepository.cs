@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using BoilerPlateWithRepos.Api.Data.Repositories.Common;
 using BoilerPlateWithRepos.Api.Data.Repositories.Interfaces;
-using BoilerPlateWithRepos.Api.Entities;
+using BoilerPlateWithRepos.Api.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BoilerPlateWithRepos.Api.Data.Repositories;

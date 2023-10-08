@@ -17,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // repos
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IGamesRepository, GamesRepository>();
+builder.Services.AddScoped<IPublishersRepository, PublishersRepository>();
 
 var app = builder.Build();
 

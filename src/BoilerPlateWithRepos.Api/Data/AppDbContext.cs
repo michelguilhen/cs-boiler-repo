@@ -1,4 +1,4 @@
-﻿using BoilerPlateWithRepos.Api.Entities;
+﻿using BoilerPlateWithRepos.Api.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -14,5 +14,6 @@ namespace BoilerPlateWithRepos.Api.Data
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Game> Games => Set<Game>();
+        public DbSet<Publisher> Publishers => Set<Publisher>();
     }
 }

@@ -1,5 +1,5 @@
 ﻿using BoilerPlateWithRepos.Api.Data.Repositories.Interfaces;
-using BoilerPlateWithRepos.Api.Entities;
+using BoilerPlateWithRepos.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Update;
 

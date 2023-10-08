@@ -1,13 +1,13 @@
-﻿using BoilerPlateWithRepos.Api.Models;
+using BoilerPlateWithRepos.Api.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BoilerPlateWithRepos.Api.Data.Configurations;
-public class GameConfiguration : IEntityTypeConfiguration<Game>
+public class PublisherConfiguration : IEntityTypeConfiguration<Publisher>
 {
-    public void Configure(EntityTypeBuilder<Game> builder)
+    public void Configure(EntityTypeBuilder<Publisher> builder)
     {
-        builder.ToTable("tb_game");
+        builder.ToTable("tb_publisher");
 
         // id
         builder.Property(p => p.Id)
@@ -25,8 +25,8 @@ public class GameConfiguration : IEntityTypeConfiguration<Game>
             .HasColumnName("description")
             .HasMaxLength(500);
 
-        builder.HasOne(p => p.Publisher)
-            .WithMany(p => p.Games)
+        builder.HasMany(p => p.Games)
+            .WithOne(p => p.Publisher)
             .HasForeignKey("publisher_id");
     }
 }

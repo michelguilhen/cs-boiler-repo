@@ -4,4 +4,31 @@ GET {{url}}/games
 ###
 
 # get_game_by_id
-GET https://localhost:7277/api/games/
+GET https://localhost:7277/api/games/2cd305a3-55ec-484c-9df1-adc7bc7c417c
+###
+
+# create_game
+POST {{url}}/games
+Content-Type: application/json
+
+{
+    "id": "2cd305a3-55ec-484c-9df1-adc7bc7c417d",
+    "name": "FC 2024",
+    "description": "bla bla"
+}
+###
+
+# update_game
+PUT {{url}}/games/2cd305a3-55ec-484c-9df1-adc7bc7c417d
+Content-Type: application/json
+
+{
+    "id": "2cd305a3-55ec-484c-9df1-adc7bc7c417d",
+    "name": "FC 2024",
+    "description": "ble ble ble"
+}
+###
+
+# delete_game
+DELETE {{url}}/games/2cd305a3-55ec-484c-9df1-adc7bc7c417d
+###

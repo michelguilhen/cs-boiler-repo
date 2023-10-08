@@ -1,5 +1,4 @@
 ﻿using System.Linq.Expressions;
-using BoilerPlateWithRepos.Api.Entities;
 
 namespace BoilerPlateWithRepos.Api.Data.Repositories.Common;
 public interface IRepository<TEntity> where TEntity : class

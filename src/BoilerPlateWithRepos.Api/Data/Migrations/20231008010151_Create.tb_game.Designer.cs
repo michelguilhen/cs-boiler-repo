@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BoilerPlateWithRepos.Api.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231004183421_Create.tb_game")]
+    [Migration("20231008010151_Create.tb_game")]
     partial class Createtb_game
     {
         /// <inheritdoc />
@@ -48,7 +48,21 @@ namespace BoilerPlateWithRepos.Api.Data.Migrations
 
                     b.HasIndex("Name");
 
-                    b.ToTable("game", (string)null);
+                    b.ToTable("tb_game", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("b60f059a-2cd8-48ee-b4c0-db3e577f081f"),
+                            Description = "bla bla",
+                            Name = "Elden Ring"
+                        },
+                        new
+                        {
+                            Id = new Guid("2cd305a3-55ec-484c-9df1-adc7bc7c417c"),
+                            Description = "ble ble",
+                            Name = "Crash Bandicoot"
+                        });
                 });
 #pragma warning restore 612, 618
         }

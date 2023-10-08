@@ -3,21 +3,20 @@ using BoilerPlateWithRepos.Api.Data.Repositories;
 using BoilerPlateWithRepos.Api.Data.Repositories.Common;
 using BoilerPlateWithRepos.Api.Data.Repositories.Interfaces;
 using BoilerPlateWithRepos.Api.Endpoints;
-using BoilerPlateWithRepos.Api.Entities;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// db
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-    
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(IGamesRepository<>), typeof(GamesRepository<>));
+
+// repos
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IGamesRepository, GamesRepository>();
 
 var app = builder.Build();
 
@@ -33,8 +32,3 @@ app.UseHttpsRedirection();
 GamesEndpoints.Map(app);
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

@@ -45,7 +45,7 @@ namespace BoilerPlateWithRepos.Api.Data.Migrations
 
                     b.HasIndex("Name");
 
-                    b.ToTable("game", (string)null);
+                    b.ToTable("tb_game", (string)null);
 
                     b.HasData(
                         new

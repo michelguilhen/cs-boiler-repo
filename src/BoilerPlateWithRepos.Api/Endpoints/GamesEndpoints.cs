@@ -39,7 +39,7 @@ public static class GamesEndpoints
             }
             return Results.Ok(await repository.UpdateAsync(game));
         })
-        .WithName("Create Game")
+        .WithName("Update Game")
         .WithOpenApi();
 
         app.MapDelete("api/games/{id}", async (IGamesRepository repository, Guid id) =>
@@ -47,7 +47,7 @@ public static class GamesEndpoints
             await repository.DeleteAsync(id);
             return Results.NoContent();
         })
-        .WithName("Create Game")
+        .WithName("Delete Game")
         .WithOpenApi();
     }
 }

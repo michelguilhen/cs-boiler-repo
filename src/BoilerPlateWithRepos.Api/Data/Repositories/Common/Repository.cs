@@ -5,7 +5,7 @@ namespace BoilerPlateWithRepos.Api.Data.Repositories.Common;
 public class Repository<TEntity>: IRepository<TEntity> where TEntity : class
 {
     private readonly AppDbContext _context;
-    private readonly DbSet<TEntity> _entities;
+    protected readonly DbSet<TEntity> _entities;
 
     public Repository(AppDbContext context)
     {
